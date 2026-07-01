@@ -1,0 +1,21 @@
+# requirements-dev.txt — dépendances de développement
+#
+# Installer avec :  pip install -r requirements-dev.txt
+# Ce fichier inclut les dépendances d'exécution (via -r requirements.txt)
+# plus les outils de test, de linting et de qualité de code.
+
+-r requirements.txt
+
+# --- Tests ---
+pytest>=8.3.0
+pytest-asyncio>=0.24.0
+pytest-cov>=5.0.0
+
+# --- Linting & formatage ---
+ruff>=0.7.0
+
+# --- Typage ---
+mypy>=1.13.0
+
+# --- Outillage ---
+ipython>=8.29.0

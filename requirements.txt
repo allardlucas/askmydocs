@@ -1,0 +1,27 @@
+# requirements.txt — dépendances d'exécution d'AskMyDocs
+#
+# Ce fichier liste les paquets nécessaires pour faire tourner l'application
+# en production. Les outils de développement (pytest, ruff…) vivent dans
+# requirements-dev.txt.
+
+# --- Framework agent ---
+langgraph>=0.2.0
+langchain>=0.3.0
+langchain-community>=0.3.0
+
+# --- API & UI ---
+fastapi>=0.115.0
+uvicorn[standard]>=0.32.0
+streamlit>=1.40.0
+
+# --- RAG & vectoriel ---
+lancedb>=0.15.0
+pymupdf>=1.24.0
+
+# --- MCP (Model Context Protocol) ---
+mcp>=0.9.0
+
+# --- Utilitaires ---
+python-dotenv>=1.0.1
+httpx>=0.27.0
+pydantic>=2.9.0
