@@ -12,8 +12,8 @@
 
 ## Phase 1 : RAG — Ingestion & recherche
 
-- [ ] **1.1** — `src/askmydocs/rag/loader.py` — `load_pdf(path)` avec pymupdf (+ tests)
-- [ ] **1.2** — `src/askmydocs/rag/chunker.py` — `chunk_text(text, size, overlap)` (+ tests)
+- [x] **1.1** — `src/askmydocs/rag/loader.py` — `load_pdf(path)` avec pymupdf (+ tests)
+- [x] **1.2** — `src/askmydocs/rag/chunker.py` — `chunk_text(text, size, overlap)` (+ tests)
 - [ ] **1.3** — `src/askmydocs/rag/store.py` — `VectorStore` LanceDB avec `add()` et `search()` (+ tests)
 - [ ] **1.4** — `src/askmydocs/rag/ingest.py` — `ingest_document(pdf_path)` pipeline complet (+ tests)
 - [ ] **1.5** — `src/askmydocs/rag/query.py` — `rag_query(question, store)` retrieve + LLM (+ tests)
