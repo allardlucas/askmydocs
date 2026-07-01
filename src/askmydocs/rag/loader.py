@@ -12,12 +12,15 @@ Exemple d'utilisation :
 
 from __future__ import annotations
 
+from os import PathLike, fsdecode
+from pathlib import Path
+
 import pymupdf
 
 __all__ = ["load_pdf"]
 
 
-def load_pdf(path: str) -> str:
+def load_pdf(path: str | PathLike[str]) -> str:
     """Extrait et concatène le texte de toutes les pages d'un PDF.
 
     Parameters
@@ -44,20 +47,20 @@ def load_pdf(path: str) -> str:
     >>> isinstance(text, str)
     True
     """
-    import os
+    pdf_path = Path(path)
 
-    if not os.path.exists(path):
-        raise FileNotFoundError(f"Fichier PDF introuvable : {path}")
+    if not pdf_path.is_file():
+        raise FileNotFoundError(f"Fichier PDF introuvable : {pdf_path}")
 
     pages_text: list[str] = []
     try:
-        with pymupdf.open(path) as doc:
+        with pymupdf.open(fsdecode(pdf_path)) as doc:
             for page in doc:
                 page_text = page.get_text()
                 # `get_text()` peut renvoyer un type union selon les options ;
                 # on force str pour le typage statique.
                 pages_text.append(str(page_text))
     except Exception as exc:  # pragma: no cover - erreur pymupdf interne
-        raise RuntimeError(f"Impossible de lire le PDF {path}: {exc}") from exc
+        raise RuntimeError(f"Impossible de lire le PDF {pdf_path}: {exc}") from exc
 
     return "\n".join(pages_text)
