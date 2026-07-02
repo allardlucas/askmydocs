@@ -54,6 +54,19 @@ class VectorStore:
     """
 
     def __init__(self, db_path: str | Path, table_name: str = "documents") -> None:
+        """Initialise le store vectoriel.
+
+        Parameters
+        ----------
+        db_path:
+            Chemin vers le répertoire de la base LanceDB. Créé s'il
+            n'existe pas.
+        table_name:
+            Nom de la table Arrow utilisée pour stocker les documents.
+            Par défaut ``"documents"``. Permet d'isoler les données de
+            plusieurs collections (par ex. un projet, un utilisateur)
+            dans la même base LanceDB sans conflit de schéma.
+        """
         self.db_path = Path(db_path)
         self.table_name = table_name
         self.db = lancedb.connect(str(self.db_path))
