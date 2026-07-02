@@ -14,6 +14,7 @@ test:
 
 lint:
 	ruff check src/ tests/
+	mypy src/
 
 format:
 	ruff check --fix src/ tests/
