@@ -6,4 +6,6 @@ and retrieval chain:
 - ``loader`` -- extract raw text from source documents (PDF, etc.).
 - ``chunker`` -- split long text into fixed-size overlapping chunks
   ready for embedding.
+- ``store`` -- persistent vector store (LanceDB) for indexing and
+  searching embeddings.
 """
