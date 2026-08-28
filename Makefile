@@ -1,4 +1,4 @@
-.PHONY: install install-dev test lint format run-api run-ui clean
+.PHONY: install install-dev test lint format run-api run-ui eval clean
 
 PYTHON := python
 PIP := $(PYTHON) -m pip
@@ -13,12 +13,15 @@ test:
 	$(PYTHON) -m pytest tests/ -v
 
 lint:
-	ruff check src/ tests/
+	ruff check src/ tests/ eval/
 	mypy src/
 
 format:
-	ruff check --fix src/ tests/
-	ruff format src/ tests/
+	ruff check --fix src/ tests/ eval/
+	ruff format src/ tests/ eval/
+
+eval:
+	$(PYTHON) -m eval.run_eval
 
 run-api:
 	$(PYTHON) -m uvicorn askmydocs.api.main:app --reload --host 0.0.0.0 --port 8000

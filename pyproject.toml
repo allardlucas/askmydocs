@@ -40,7 +40,7 @@ asyncio_mode = "auto"
 [tool.ruff]
 line-length = 100
 target-version = "py311"
-src = ["src", "tests"]
+src = ["src", "tests", "eval"]
 
 [tool.ruff.lint]
 select = [
@@ -56,4 +56,4 @@ select = [
 ignore = []
 
 [tool.ruff.lint.isort]
-known-first-party = ["askmydocs"]
+known-first-party = ["askmydocs", "eval"]

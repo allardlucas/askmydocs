@@ -74,3 +74,6 @@ data/*.pdf
 data/*.db
 data/vector_store/
 .lancedb/
+
+# Eval audit log (latest.json is committed; transcripts are local)
+eval/results/transcripts.jsonl

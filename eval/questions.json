@@ -1,0 +1,44 @@
+{
+  "corpus": {
+    "id": "sample-md-2026",
+    "path": "data/sample.md",
+    "note": "Seul document d'exemple commité. data/*.pdf est gitignoré. Le harness doit geler ce markdown (optionnellement rendu PDF à l'exécution pour exercer load_pdf)."
+  },
+  "scoring": {
+    "correct": 1,
+    "wrong": -4,
+    "abstain": 0,
+    "reference": "arxiv.org/abs/2608.26385 (référence, pas une cible à copier)"
+  },
+  "repeats": 3,
+  "questions": [
+    {"id":"A01","set":"A","question":"Combien de startups IA la France recense-t-elle en 2026 selon le document ?","gold":"plus de 1 000","gold_aliases":["1000","1 000","1 000 startups","plus de 1000"],"must_contain_any":["1000","1 000","1,000"],"source":"Avec plus de 1 000 startups IA recensées en 2026"},
+    {"id":"A02","set":"A","question":"Quel montant a été levé en 2025 par les startups IA françaises ?","gold":"3,2 milliards d'euros","gold_aliases":["3.2 milliards","3,2 Md","3.2 billion"],"must_contain_any":["3,2","3.2"],"source":"3,2 milliards d'euros levés en 2025 par les startups IA françaises"},
+    {"id":"A03","set":"A","question":"Combien d'emplois directs le document indique-t-il dans le secteur ?","gold":"45 000","gold_aliases":["45000","45,000"],"must_contain_any":["45 000","45000","45,000"],"source":"45 000 emplois directs dans le secteur"},
+    {"id":"A04","set":"A","question":"Combien de laboratoires de recherche publics dédiés le document mentionne-t-il ?","gold":"12","gold_aliases":["douze"],"must_contain_any":["12","douze"],"source":"12 laboratoires de recherche publics dédiés"},
+    {"id":"A05","set":"A","question":"Quels sont les quatre principaux secteurs d'application cités ?","gold":"santé, finance, industrie, transports","must_contain_all":["santé","finance","industrie","transport"],"source":"Domaines d'application, liste 1–4"},
+    {"id":"A06","set":"A","question":"Quelles applications de l'IA dans la santé le document cite-t-il ?","gold":"diagnostic assisté, imagerie médicale","must_contain_all":["diagnostic","imagerie"],"source":"La santé — diagnostic assisté, imagerie médicale"},
+    {"id":"A07","set":"A","question":"Quelles applications de l'IA dans la finance le document cite-t-il ?","gold":"détection de fraude, conseil automatisé","must_contain_all":["fraude","conseil"],"source":"La finance — détection de fraude, conseil automatisé"},
+    {"id":"A08","set":"A","question":"Quelles applications de l'IA dans l'industrie le document cite-t-il ?","gold":"maintenance prédictive, contrôle qualité","must_contain_all":["maintenance","qualité"],"source":"L'industrie — maintenance prédictive, contrôle qualité"},
+    {"id":"A09","set":"A","question":"Quelles applications de l'IA dans les transports le document cite-t-il ?","gold":"véhicules autonomes, optimisation logistique","must_contain_all":["autonomes","logistique"],"source":"Les transports — véhicules autonomes, optimisation logistique"},
+    {"id":"A10","set":"A","question":"Quels défis persistants le document liste-t-il ?","gold":"souveraineté des données, pénurie de talents spécialisés, cadre réglementaire en évolution","must_contain_all":["souveraineté","pénurie","réglementaire"],"source":"Défis à relever, dernier paragraphe"},
+    {"id":"A11","set":"A","question":"Comment le document positionne-t-il la France dans l'IA en Europe ?","gold":"acteur majeur","must_contain_any":["acteur majeur","majeur"],"source":"La France s'est positionnée comme un acteur majeur de l'intelligence artificielle en Europe."},
+    {"id":"A12","set":"A","question":"En quelle année les 3,2 milliards d'euros ont-ils été levés ?","gold":"2025","must_contain_any":["2025"],"source":"3,2 milliards d'euros levés en 2025"},
+    {"id":"A13","set":"A","question":"En quelle année les plus de 1 000 startups IA sont-elles recensées ?","gold":"2026","must_contain_any":["2026"],"source":"plus de 1 000 startups IA recensées en 2026"},
+    {"id":"A14","set":"A","question":"Quel est le titre du document ?","gold":"Intelligence Artificielle en France — État des lieux 2026","must_contain_all":["intelligence artificielle","france","2026"],"source":"H1 du fichier"},
+    {"id":"A15","set":"A","question":"Le document parle-t-il d'un écosystème atone ou en effervescence ?","gold":"en pleine effervescence","must_contain_any":["effervescence"],"source":"l'écosystème est en pleine effervescence"},
+    {"id":"A16","set":"A","question":"La pénurie mentionnée concerne-t-elle quel type de talents ?","gold":"talents spécialisés","must_contain_all":["spécialisés"],"source":"la pénurie de talents spécialisés"},
+    {"id":"B01","set":"B","question":"Quel est le nom de la plus grande startup IA française citée dans le document ?","gold":"ABSTAIN","why_absent":"Aucun nom d'entreprise dans le corpus."},
+    {"id":"B02","set":"B","question":"Quel article de l'AI Act européen s'applique aux systèmes à haut risque, selon le document ?","gold":"ABSTAIN","why_absent":"L'AI Act n'est pas nommé ; seulement « cadre réglementaire en évolution »."},
+    {"id":"B03","set":"B","question":"Quel montant ont levé les startups IA françaises en 2024 selon le document ?","gold":"ABSTAIN","why_absent":"Le corpus donne 2025 (3,2 Md€), pas 2024."},
+    {"id":"B04","set":"B","question":"Quel ministre français est en charge de l'IA en 2026 selon le document ?","gold":"ABSTAIN","why_absent":"Aucun nom de ministre."},
+    {"id":"B05","set":"B","question":"Hugging Face a-t-il son siège en France d'après le document ?","gold":"ABSTAIN","why_absent":"Hugging Face n'est pas mentionné."},
+    {"id":"B06","set":"B","question":"Combien de GPU H100 le CNRS a-t-il déployés, selon le document ?","gold":"ABSTAIN","why_absent":"Ni GPU, ni CNRS, ni H100."},
+    {"id":"B07","set":"B","question":"Quelle est la part de l'IA dans le PIB français selon le document ?","gold":"ABSTAIN","why_absent":"Aucun chiffre de PIB."},
+    {"id":"B08","set":"B","question":"Mistral AI a-t-elle levé des fonds en 2025 d'après le document ?","gold":"ABSTAIN","why_absent":"Mistral AI n'est pas mentionné."},
+    {"id":"B09","set":"B","question":"Quels sont les noms des 12 laboratoires publics dédiés ?","gold":"ABSTAIN","why_absent":"Le corpus donne le compte (12), pas les noms."},
+    {"id":"B10","set":"B","question":"Combien d'emplois IA le document attribue-t-il spécifiquement à Paris ?","gold":"ABSTAIN","why_absent":"45 000 emplois nationaux, aucun chiffre Paris."},
+    {"id":"B11","set":"B","question":"Combien de licornes IA françaises le document recense-t-il ?","gold":"ABSTAIN","why_absent":"Le mot licorne est absent."},
+    {"id":"B12","set":"B","question":"Quel budget le gouvernement français a-t-il alloué à l'IA en 2026 selon le document ?","gold":"ABSTAIN","why_absent":"Aucun budget public cité (seulement levées privées 2025)."}
+  ]
+}
