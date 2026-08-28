@@ -1,0 +1,30 @@
+{
+  "status": "not_run",
+  "reason": "no retrieve→reason→answer entrypoint on this checkout",
+  "entrypoint": null,
+  "corpus": {
+    "id": "sample-md-2026",
+    "path": "data/sample.md",
+    "sha256": "d7ea38512f15215c5d4fd8e9dca2cc70cefff757ef2cd7e44a41dbd7837774eb"
+  },
+  "bank": {
+    "n_questions": 28,
+    "n_set_a": 16,
+    "n_set_b": 12,
+    "repeats": 3
+  },
+  "scoring": {
+    "correct": 1,
+    "wrong": -4,
+    "abstain": 0,
+    "reference": "arxiv.org/abs/2608.26385 (référence, pas une cible à copier)"
+  },
+  "metrics": {
+    "a_accuracy_given_attempt": null,
+    "a_abstention_rate": null,
+    "b_abstention_rate": null,
+    "b_canary_violation_rate": null,
+    "mean_q": null,
+    "p50_latency_ms": null
+  }
+}
